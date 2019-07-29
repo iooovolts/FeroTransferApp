@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="FeroTransferApp.Views.TransferCountryView">
+
+    <Shell.SearchHandler>
+        <SearchHandler Query="{Binding Query}"
+                       SearchBoxVisibility="Collapsible"
+                       Placeholder="Search countries"/>
+    </Shell.SearchHandler>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listView" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country, Mode=TwoWay}" IsVisible="{Binding CountriesVisible}" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="ALL COUNTRIES"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource Key=FeroTransferTheme}"
+                   Margin="10"
+                   IsVisible="{Binding FilteredCountriesVisible}"/>
+            <ListView x:Name="filteredListView" ItemsSource="{Binding FilteredCountries}" SelectedItem="{Binding Country, Mode=TwoWay}" IsVisible="{Binding FilteredCountriesVisible}" ItemSelected="FilteredListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" TextColor="Black">
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

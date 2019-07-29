@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="FeroTransferApp.Views.RecipientsView">
+
+    <Shell.SearchHandler>
+        <SearchHandler Query="{Binding Query}"
+                       SearchBoxVisibility="Collapsible"
+                       Placeholder="Search recipients"/>
+    </Shell.SearchHandler>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="add.png" Command="{Binding AddRecipientCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listView" ItemsSource="{Binding Recipients}" SelectedItem="{Binding Recipient, Mode=TwoWay}" IsVisible="{Binding RecipientsVisible}" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding FullName}" TextColor="Black">
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Delete"
+                                          IsDestructive="True"
+                                          CommandParameter="{Binding .}"
+                                          Command="{Binding Path=BindingContext.DeleteRecipientCommand, Source={x:Reference listView}}" />
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="ALL CONTACTS"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource Key=FeroTransferTheme}"
+                   Margin="10"
+                   IsVisible="{Binding FilteredRecipientsVisible}"/>
+            <ListView x:Name="filteredListView" ItemsSource="{Binding FilteredRecipients}" SelectedItem="{Binding Recipient, Mode=TwoWay}" IsVisible="{Binding FilteredRecipientsVisible}" ItemSelected="FilteredListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding FullName}" TextColor="Black">
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Delete"
+                                          IsDestructive="True"
+                                          CommandParameter="{Binding .}"
+                                          Command="{Binding Path=BindingContext.DeleteRecipientCommand, Source={x:Reference filteredListView}}" />
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

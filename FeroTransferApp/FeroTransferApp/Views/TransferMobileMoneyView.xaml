@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="FeroTransferApp.Views.TransferMobileMoneyView">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Gray">
+            
+            <StackLayout Orientation="Horizontal" BackgroundColor="Yellow">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Sending from"/>
+                    <!--<Picker ItemsSource="{Binding .}"
+                    ItemDisplayBinding="{Binding Name}"/>-->
+                </StackLayout>
+                <Entry x:Name="sendAmount"
+                   Keyboard="Numeric"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="Orange">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Receiving from"/>
+                    <!--<Picker ItemsSource="{Binding .}"
+                    ItemDisplayBinding="{Binding Name}"/>-->
+                </StackLayout>
+                <Entry x:Name="receiveAmount"
+                   Keyboard="Numeric"/>
+            </StackLayout>
+            <Button Text="Transfer"
+                    Command="{Binding NavigateCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

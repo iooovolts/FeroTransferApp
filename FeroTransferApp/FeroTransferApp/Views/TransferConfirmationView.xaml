@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"             
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="FeroTransferApp.Views.TransferConfirmationView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Sending :100"/>
+            <Label Text="Receiving: 200"/>
+            <Label Text="Method: Mobile money"/>
+            <Button Text="Add new recipient"
+                    Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

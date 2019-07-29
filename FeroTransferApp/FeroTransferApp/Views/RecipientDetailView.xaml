@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="FeroTransferApp.Views.RecipientDetailView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="save.png" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <TableView>
+                    <TableRoot>
+                        <TableSection>
+                            <EntryCell Placeholder="First name" 
+                                           Text="{Binding Recipient.FirstName}"/>
+                            <EntryCell Placeholder="Last name" 
+                                           Text="{Binding Recipient.LastName}"/>
+                            <EntryCell Placeholder="Phone number" 
+                                           Keyboard="Numeric"
+                                           Text="{Binding Recipient.PhoneNumber}"/>
+                            <EntryCell Placeholder="Account number"
+                                           Keyboard="Numeric"
+                                           Text="{Binding Recipient.AccountNumber}"/>
+                            <EntryCell Placeholder="Sort code"
+                                           Keyboard="Numeric"
+                                           Text="{Binding Recipient.SortCode}"/>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </StackLayout>
+            <Button Text="Transfer to this recipient" 
+                    Command="{Binding TransferCommand}"
+                    IsVisible="{Binding Recipient.IsSaved}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

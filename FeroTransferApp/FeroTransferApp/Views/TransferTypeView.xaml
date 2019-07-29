@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="FeroTransferApp.Views.TransferTypeView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Button" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Cash pickup" 
+                    Style="{StaticResource Button}"/>
+            <Button Text="Mobile money" 
+                    Style="{StaticResource Button}"
+                    Command="{Binding MobileMoneyCommand}"/>
+            <Button Text="Bank transfer"
+                    Style="{StaticResource Button}"/>
+            <Button Text="Fero transfer wallet"
+                    Style="{StaticResource Button}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
