@@ -3,6 +3,7 @@ using Prism.Commands;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
 using System.Linq;
+using FeroTransferApp.ViewModels.Base;
 
 namespace FeroTransferApp.ViewModels
 {

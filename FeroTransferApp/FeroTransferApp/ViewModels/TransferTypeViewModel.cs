@@ -1,4 +1,5 @@
-﻿using FeroTransferApp.Views;
+﻿using FeroTransferApp.ViewModels.Base;
+using FeroTransferApp.Views;
 using Prism.Commands;
 using Prism.Navigation;
 

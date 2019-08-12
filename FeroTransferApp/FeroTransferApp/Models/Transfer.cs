@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FeroTransferApp.Models
 {
-    public class Transfer : Entity
+    public class Transfer : Entity<int>
     {
         public string SenderId { get; set; }
         public string RecipientName { get; set; }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using FeroTransferApp.Models;
+using FeroTransferApp.ViewModels.Base;
 
 namespace FeroTransferApp.ViewModels
 {

@@ -14,24 +14,24 @@
             <StackLayout Orientation="Horizontal" BackgroundColor="Yellow">
                 <StackLayout Orientation="Vertical">
                     <Label Text="Sending from"/>
-                    <!--<Picker ItemsSource="{Binding .}"
-                    ItemDisplayBinding="{Binding Name}"/>-->
+                    <Picker ItemsSource="{Binding Currencies}"
+                    ItemDisplayBinding="{Binding Id}"/>
                 </StackLayout>
-                <Entry x:Name="sendAmount"
-                   Keyboard="Numeric"/>
+                <Entry Keyboard="Numeric"
+                       Placeholder="00.00"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" BackgroundColor="Orange">
                 <StackLayout Orientation="Vertical">
                     <Label Text="Receiving from"/>
-                    <!--<Picker ItemsSource="{Binding .}"
-                    ItemDisplayBinding="{Binding Name}"/>-->
+                    <Picker ItemsSource="{Binding Currencies}"
+                    ItemDisplayBinding="{Binding Id}"/>
                 </StackLayout>
-                <Entry x:Name="receiveAmount"
-                   Keyboard="Numeric"/>
+                <Entry Keyboard="Numeric" 
+                       Placeholder="00.00"/>
             </StackLayout>
             <Button Text="Transfer"
-                    Command="{Binding NavigateCommand}"/>
+                    Command="{Binding ConvertCurrencyCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

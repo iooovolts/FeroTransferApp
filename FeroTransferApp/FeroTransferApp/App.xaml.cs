@@ -1,7 +1,9 @@
-﻿using FeroTransferApp.Views;
+﻿using System.Net.Http;
+using FeroTransferApp.Views;
 using Prism.Ioc;
 using Prism;
 using TransferTypeView = FeroTransferApp.Views.TransferTypeView;
+using FeroTransferApp.Services;
 
 namespace FeroTransferApp
 {
@@ -18,6 +20,8 @@ namespace FeroTransferApp
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<HttpClient>();
+            containerRegistry.RegisterSingleton<ICurrencyService, CurrencyService>();
             containerRegistry.RegisterForNavigation<RecipientsView>();
             containerRegistry.RegisterForNavigation<TransferTypeView>();
             containerRegistry.RegisterForNavigation<RecipientDetailView>();

@@ -4,6 +4,7 @@ using Prism.Commands;
 using Prism.Events;
 using Prism.Navigation;
 using System;
+using FeroTransferApp.ViewModels.Base;
 
 namespace FeroTransferApp.ViewModels
 {
@@ -39,6 +40,6 @@ namespace FeroTransferApp.ViewModels
         }
 
         private Recipient _recipient = new Recipient();
-        public Recipient Recipient { get => _recipient; set { SetProperty(ref _recipient, value); } }
+        public Recipient Recipient { get => _recipient; set => SetProperty(ref _recipient, value); }
     }
 }

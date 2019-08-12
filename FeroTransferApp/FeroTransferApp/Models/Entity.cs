@@ -4,8 +4,13 @@ using System.Text;
 
 namespace FeroTransferApp.Models
 {
-    public class Entity
+    public interface IEntity<TId>
     {
-        public int? Id { get; set; }
+        TId Id { get; set; }
+    }
+
+    public class Entity<T> : IEntity<T>
+    {
+        public T Id { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace FeroTransferApp.ViewModels
+namespace FeroTransferApp.ViewModels.Base
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
