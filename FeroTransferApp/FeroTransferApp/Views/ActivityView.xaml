@@ -7,16 +7,13 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
              Title="{Binding Title}"
-             x:Class="FeroTransferApp.Views.TransferView">
+             x:Class="FeroTransferApp.Views.ActivityView">
 
     <Shell.SearchHandler>
         <SearchHandler Query="{Binding Query}"
                        SearchBoxVisibility="Collapsible"
                        Placeholder="Search transfers"/>
     </Shell.SearchHandler>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="transfer.png" Command="{Binding TransferCommand}"/>
-    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>

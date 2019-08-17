@@ -55,7 +55,7 @@
     <EmbeddedResource Update="Views\TransferTypeView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TransferView.xaml">
+    <EmbeddedResource Update="Views\ActivityView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -80,6 +80,9 @@
     </Compile>
     <Compile Update="Views\TransferMobileMoneyView.xaml.cs">
       <DependentUpon>TransferMobileMoneyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ActivityView.xaml.cs">
+      <DependentUpon>ActivityView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

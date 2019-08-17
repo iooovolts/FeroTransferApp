@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:prismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
              Title="{Binding Title}"
@@ -15,20 +16,29 @@
                 <StackLayout Orientation="Vertical">
                     <Label Text="Sending from"/>
                     <Picker ItemsSource="{Binding Currencies}"
-                    ItemDisplayBinding="{Binding Id}"/>
+                    ItemDisplayBinding="{Binding Id}" 
+                    SelectedItem="{Binding CurrencyFrom, Mode=TwoWay}"/>
                 </StackLayout>
                 <Entry Keyboard="Numeric"
-                       Placeholder="00.00"/>
+                       Placeholder="0">
+                    <Entry.Behaviors>
+                        <prismBehaviors:EventToCommandBehavior EventName="TextChanged"
+                                                               Command="{Binding CalculateCurrencyExchangeCommand}" 
+                                                               EventArgsParameterPath="NewTextValue"/>
+                    </Entry.Behaviors>
+                </Entry>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" BackgroundColor="Orange">
                 <StackLayout Orientation="Vertical">
                     <Label Text="Receiving from"/>
                     <Picker ItemsSource="{Binding Currencies}"
-                    ItemDisplayBinding="{Binding Id}"/>
+                    ItemDisplayBinding="{Binding Id}"
+                    SelectedItem="{Binding CurrencyTo, Mode=TwoWay}"/>
                 </StackLayout>
                 <Entry Keyboard="Numeric" 
-                       Placeholder="00.00"/>
+                       IsReadOnly="True"
+                       Text="{Binding CurrencyToAmount}"/>
             </StackLayout>
             <Button Text="Transfer"
                     Command="{Binding ConvertCurrencyCommand}"/>

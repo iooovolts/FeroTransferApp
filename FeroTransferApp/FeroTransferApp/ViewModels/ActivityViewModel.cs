@@ -9,11 +9,11 @@ using FeroTransferApp.ViewModels.Base;
 
 namespace FeroTransferApp.ViewModels
 {
-    public class TransferViewModel : BaseViewModel
+    public class ActivityViewModel : BaseViewModel
     {
         private INavigationService NavigationService { get; set; }
         public DelegateCommand TransferCommand { get; set; }
-        public TransferViewModel(INavigationService navigationService)
+        public ActivityViewModel(INavigationService navigationService)
         {
             Title = "Transfer";
             NavigationService = navigationService;

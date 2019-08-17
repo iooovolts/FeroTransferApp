@@ -31,14 +31,19 @@
 
     <!-- Your Pages -->
     <TabBar>
-        <Tab Title="Transfer"
-             Icon="fero.png">
-            <ShellContent ContentTemplate="{DataTemplate local:TransferView}"
+        <Tab Title="Activity"
+             Icon="activity.png">
+            <ShellContent ContentTemplate="{DataTemplate local:ActivityView}"
                           Style="{StaticResource BaseStyle}" />
         </Tab>
         <Tab Title="Recipients"
              Icon="recipients.png">
             <ShellContent ContentTemplate="{DataTemplate local:RecipientsView}"
+                          Style="{StaticResource BaseStyle}"/>
+        </Tab>
+        <Tab Title="Transfer"
+             Icon="fero.png">
+            <ShellContent ContentTemplate="{DataTemplate local:TransferCountryView}"
                           Style="{StaticResource BaseStyle}"/>
         </Tab>
         <Tab Title="Invite"

@@ -12,7 +12,7 @@ namespace FeroTransferApp.Services
     public interface ICurrencyService
     {
         Task<List<Currency>> GetCurrencies();
-        Task<double> GetCurrencyConversion(string currencyFrom, string currencyTo); 
+        Task<double> GetCurrencyConversion(Currency currencyFrom, Currency currencyTo); 
 
     }
 
@@ -28,16 +28,16 @@ namespace FeroTransferApp.Services
             _httpClient = httpClient;
         }
 
-        public async Task<double> GetCurrencyConversion(string currencyFrom, string currencyTo)
+        public async Task<double> GetCurrencyConversion(Currency currencyFrom, Currency currencyTo)
         {
             try
             {
                 var url =
-                    $"{CurrencyConverterApiBaseUrl}convert?q={currencyFrom}_{currencyTo}&compact=ultra&apiKey={CurrencyConverterApiKey}";
+                    $"{CurrencyConverterApiBaseUrl}convert?q={currencyFrom.Id}_{currencyTo.Id}&compact=ultra&apiKey={CurrencyConverterApiKey}";
                 var content = await _httpClient.GetStringAsync(url);
 
                 var resultJson = JsonConvert.DeserializeObject<dynamic>(content);
-                var resultRates = resultJson[$"{currencyFrom}_{currencyTo}"].Value;
+                var resultRates = resultJson[$"{currencyFrom.Id}_{currencyTo.Id}"].Value;
                 return (double)resultRates;
             }
             catch (Exception e)

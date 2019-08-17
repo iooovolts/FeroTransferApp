@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace FeroTransferApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TransferView : ContentPage
+    public partial class ActivityView : ContentPage
     {
-        public TransferView()
+        public ActivityView()
         {
             InitializeComponent();
         }

@@ -1,10 +1,7 @@
-﻿using Prism.Commands;
+﻿using System;
+using Prism.Commands;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
-using System.Threading.Tasks;
 using FeroTransferApp.Models;
 using FeroTransferApp.Services;
 using FeroTransferApp.ViewModels.Base;
@@ -13,41 +10,59 @@ namespace FeroTransferApp.ViewModels
 {
     public class TransferMobileMoneyViewModel : BaseViewModel
     {
-        private string _currencyTo;
-        private string _currencyFrom;
+        private Currency _currencyTo;
+        private Currency _currencyFrom;
+        private double _currencyToAmount;
         private ObservableCollection<Currency> _currencies;
 
         private readonly ICurrencyService _currencyService;
         private readonly INavigationService _navigationService;
         public DelegateCommand NavigateCommand { get; set; }
-        public DelegateCommand ConvertCurrencyCommand { get; set; }
+        public DelegateCommand<string> CalculateCurrencyExchangeCommand { get; set; }
         public TransferMobileMoneyViewModel(INavigationService navigationService, ICurrencyService currencyService)
         {
             Title = "Mobile money";
             _currencyService = currencyService;
             _navigationService = navigationService;
             GetCurrencies();
-            ConvertCurrencyCommand = new DelegateCommand(async () => await ConvertCurrencies());
+            CalculateCurrencyExchangeCommand = new DelegateCommand<string>(CalculateCurrencyExchange);
             NavigateCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("TransferConfirmationView", useModalNavigation: false));
         }
 
-        public async Task ConvertCurrencies()
+        private async void ConvertCurrencies()
         {
-          var exchangeRate = await _currencyService.GetCurrencyConversion("GBP", "USD");
-
+          var exchangeRate = await _currencyService.GetCurrencyConversion(CurrencyFrom, CurrencyTo);
+          ExchangeRate = exchangeRate;
         }
 
-        public async void GetCurrencies()
+        private void CalculateCurrencyExchange(string amount)
+        {
+            if(!string.IsNullOrWhiteSpace(amount))
+                CurrencyToAmount = Convert.ToDouble(amount) * ExchangeRate;
+        }
+
+        private async void GetCurrencies()
         {
            var currencies = await _currencyService.GetCurrencies();
            Currencies = new ObservableCollection<Currency>(currencies);
         }
 
-        public string CurrencyTo { get => _currencyTo;
-            set => SetProperty(ref _currencyTo, value);
+        public double ExchangeRate;
+        public double CurrencyToAmount
+        {
+            get => _currencyToAmount; set => SetProperty(ref _currencyToAmount, value);
         }
 
-        public string CurrencyFrom
+        public Currency CurrencyTo {
+            get => _currencyTo;
+            set
+            {
+                SetProperty(ref _currencyTo, value);
+                ConvertCurrencies();
+            }
+        }
+
+        public Currency CurrencyFrom
         {
             get => _currencyFrom;
             set => SetProperty(ref _currencyFrom, value);
