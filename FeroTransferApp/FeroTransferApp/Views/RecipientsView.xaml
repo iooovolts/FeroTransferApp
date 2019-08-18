@@ -36,7 +36,7 @@
             </ListView>
             <Label Text="ALL CONTACTS"
                    FontAttributes="Bold"
-                   TextColor="{StaticResource Key=FeroTransferTheme}"
+                   TextColor="{StaticResource FeroTransferTheme}"
                    Margin="10"
                    IsVisible="{Binding FilteredRecipientsVisible}"/>
             <ListView x:Name="filteredListView" ItemsSource="{Binding FilteredRecipients}" SelectedItem="{Binding Recipient, Mode=TwoWay}" IsVisible="{Binding FilteredRecipientsVisible}" ItemSelected="FilteredListView_ItemSelected">

@@ -12,7 +12,7 @@ namespace FeroTransferApp.ViewModels
         public TransferTypeViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            MobileMoneyCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("TransferMobileMoneyView", useModalNavigation: false));
+            MobileMoneyCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("TransferView", useModalNavigation: false));
         }
 
         public void OnNavigatingTo(INavigationParameters parameters)

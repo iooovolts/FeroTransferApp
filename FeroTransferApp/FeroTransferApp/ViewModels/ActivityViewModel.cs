@@ -12,12 +12,12 @@ namespace FeroTransferApp.ViewModels
     public class ActivityViewModel : BaseViewModel
     {
         private INavigationService NavigationService { get; set; }
-        public DelegateCommand TransferCommand { get; set; }
+        public DelegateCommand NavigateToTransferViewCommand { get; set; }
         public ActivityViewModel(INavigationService navigationService)
         {
-            Title = "Transfer";
+            Title = "Activity";
             NavigationService = navigationService;
-            TransferCommand = new DelegateCommand(async () => await NavigationService.NavigateAsync("TransferCountryView", useModalNavigation: false)); ;
+            NavigateToTransferViewCommand = new DelegateCommand(async () => await NavigationService.NavigateAsync("TransferView",useModalNavigation:false)); ;
         }
 
         private ObservableCollection<Transfer> _transfers;

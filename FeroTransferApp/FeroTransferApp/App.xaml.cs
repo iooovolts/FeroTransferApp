@@ -4,6 +4,7 @@ using Prism.Ioc;
 using Prism;
 using TransferTypeView = FeroTransferApp.Views.TransferTypeView;
 using FeroTransferApp.Services;
+using Xamarin.Forms;
 
 namespace FeroTransferApp
 {
@@ -25,8 +26,8 @@ namespace FeroTransferApp
             containerRegistry.RegisterForNavigation<RecipientsView>();
             containerRegistry.RegisterForNavigation<TransferTypeView>();
             containerRegistry.RegisterForNavigation<RecipientDetailView>();
-            containerRegistry.RegisterForNavigation<TransferCountryView>();
-            containerRegistry.RegisterForNavigation<TransferMobileMoneyView>();
+            containerRegistry.RegisterForNavigation<TransferView>();
+            containerRegistry.RegisterForNavigation<CurrencyView>();
             containerRegistry.RegisterForNavigation<TransferConfirmationView>();
         }
 

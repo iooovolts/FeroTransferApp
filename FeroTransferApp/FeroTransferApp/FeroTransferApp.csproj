@@ -28,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\CurrencyView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ProfileView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -46,10 +49,7 @@
     <EmbeddedResource Update="Views\TransferConfirmationView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TransferCountryView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\TransferMobileMoneyView.xaml">
+    <EmbeddedResource Update="Views\TransferView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TransferTypeView.xaml">
@@ -75,11 +75,8 @@
     <Compile Update="Views\TransferConfirmationView.xaml.cs">
       <DependentUpon>TransferConfirmationView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\TransferCountryView.xaml.cs">
-      <DependentUpon>TransferCountryView.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\TransferMobileMoneyView.xaml.cs">
-      <DependentUpon>TransferMobileMoneyView.xaml</DependentUpon>
+    <Compile Update="Views\TransferView.xaml.cs">
+      <DependentUpon>TransferView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ActivityView.xaml.cs">
       <DependentUpon>ActivityView.xaml</DependentUpon>
