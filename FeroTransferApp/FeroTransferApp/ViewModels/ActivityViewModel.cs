@@ -20,9 +20,9 @@ namespace FeroTransferApp.ViewModels
             NavigateToTransferViewCommand = new DelegateCommand(async () => await NavigationService.NavigateAsync("TransferView",useModalNavigation:false)); ;
         }
 
-        private ObservableCollection<Transfer> _transfers;
+        private ObservableCollection<TransferModel> _transfers;
 
-        public ObservableCollection<Transfer> Transfers
+        public ObservableCollection<TransferModel> Transfers
         {
             get => _transfers;
             set => SetProperty(ref _transfers, value);

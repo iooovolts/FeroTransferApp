@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             xmlns:local="clr-namespace:FeroTransferApp.Views;assembly=FeroTransferApp"
+             xmlns:effects="clr-namespace:FeroTransferApp.Effects;assembly=FeroTransferApp"
+             mc:Ignorable="d"
+             BarBackgroundColor="{StaticResource FeroTransferTheme}"
+             BarTextColor="White"
+             UnselectedTabColor="WhiteSmoke"
+             SelectedTabColor="White"
+             x:Class="FeroTransferApp.Views.TabbedView">
+    <TabbedPage.Effects>
+        <effects:NoShiftEffect />
+    </TabbedPage.Effects>
+
+    <TabbedPage.Children>
+        <local:ActivityView Title="Activity" IconImageSource="activity.png"/>
+        <local:RecipientsView Title="Recipients" IconImageSource="recipients.png"/>
+        <local:TransferView Title="Transfer" IconImageSource="fero.png"/>
+        <local:InviteView Title="Invite" IconImageSource="invite.png"/>
+        <local:AccountView Title="Account" IconImageSource="account.png"/>
+    </TabbedPage.Children>
+</TabbedPage>

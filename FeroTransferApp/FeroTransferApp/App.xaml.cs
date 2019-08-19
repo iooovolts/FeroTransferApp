@@ -2,8 +2,8 @@
 using FeroTransferApp.Views;
 using Prism.Ioc;
 using Prism;
-using TransferTypeView = FeroTransferApp.Views.TransferTypeView;
 using FeroTransferApp.Services;
+using Prism.Navigation;
 using Xamarin.Forms;
 
 namespace FeroTransferApp
@@ -12,17 +12,19 @@ namespace FeroTransferApp
     {
         public App() : this(null) { }
         public App(IPlatformInitializer initializer) : base(initializer) { }
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            await NavigationService.NavigateAsync("NavigationPage/TabbedView");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterSingleton<HttpClient>();
             containerRegistry.RegisterSingleton<ICurrencyService, CurrencyService>();
+            containerRegistry.RegisterForNavigation<TabbedView>();
             containerRegistry.RegisterForNavigation<RecipientsView>();
             containerRegistry.RegisterForNavigation<TransferTypeView>();
             containerRegistry.RegisterForNavigation<RecipientDetailView>();

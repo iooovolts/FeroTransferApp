@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Prism.Navigation;
 
 namespace FeroTransferApp.ViewModels.Base
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged, INavigatedAware
     {
         private string _title;
         public string Title
@@ -38,5 +39,13 @@ namespace FeroTransferApp.ViewModels.Base
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+
+        public virtual void OnNavigatedFrom(INavigationParameters parameters)
+        {
+        }
+
+        public virtual void OnNavigatedTo(INavigationParameters parameters)
+        {
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace FeroTransferApp.ViewModels
 
         public RecipientsViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
         {
-            Title = "Recipients"; 
+            Title = ""; 
             RecipientsVisible = true;
             _navigationService = navigationService;
             eventAggregator.GetEvent<RecipientAddedEvent>().Subscribe(AddRecipient);
@@ -76,7 +76,7 @@ namespace FeroTransferApp.ViewModels
 
         private ObservableCollection<Recipient> _recipients = new ObservableCollection<Recipient>
         {
-            new Recipient { FirstName="Steve"},
+            new Recipient { FirstName="Steve", PhoneNumber = "07508007976"},
             new Recipient { FirstName="Hurley"},
             new Recipient { FirstName="Britney"},
             new Recipient { FirstName="Mustafe"},

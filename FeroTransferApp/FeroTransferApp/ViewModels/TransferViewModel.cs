@@ -1,27 +1,33 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Navigation;
-using System.Collections.ObjectModel;
 using FeroTransferApp.Models;
 using FeroTransferApp.Services;
 using FeroTransferApp.ViewModels.Base;
+using Xamarin.Forms;
 
 namespace FeroTransferApp.ViewModels
 {
-    public class TransferViewModel : BaseViewModel, INavigatedAware
+    public class TransferViewModel : BaseViewModel
     {
-        private Currency _currencyReceiving;
+        private double _exchangeRate;
         private Currency _currencySending;
+        private Currency _currencyReceiving;
+        private bool _isVisibleExchangeRate;
+        private double _currencySendingAmount;
         private double _currencyReceivingAmount;
-
         private readonly ICurrencyService _currencyService;
         private readonly INavigationService _navigationService;
+
+        public TransferModel TransferModel;
         public DelegateCommand NavigateCommand { get; set; }
         public DelegateCommand<string> NavigateToCurrencyViewCommand { get; set; }
         public DelegateCommand<string> CalculateCurrencyExchangeCommand { get; set; }
         public TransferViewModel(INavigationService navigationService, ICurrencyService currencyService)
         {
             Title = "Send money";
+            IsVisibleExchangeRate = false;
             _currencyService = currencyService;
             _navigationService = navigationService;
             CalculateCurrencyExchangeCommand = new DelegateCommand<string>(CalculateCurrencyExchange);
@@ -42,12 +48,19 @@ namespace FeroTransferApp.ViewModels
             }
         }
 
-        public void OnNavigatedFrom(INavigationParameters parameters)
+        public override void OnNavigatedFrom(INavigationParameters parameters)
         {
-            throw new NotImplementedException();
+            TransferModel = new TransferModel
+            {
+                CurrencySending = CurrencySending,
+                CurrencyReceiving = CurrencyReceiving,
+                ExchangeRate = ExchangeRate,
+                AmountSending = _currencySendingAmount,
+                AmountReceiving = _currencyReceivingAmount
+            };
         }
 
-        public void OnNavigatedTo(INavigationParameters parameters)
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
             if (parameters.Count > 0)
             {
@@ -63,6 +76,7 @@ namespace FeroTransferApp.ViewModels
         {
             var exchangeRate = await _currencyService.GetCurrencyConversion(CurrencySending, CurrencyReceiving);
             ExchangeRate = exchangeRate;
+            CalculateCurrencyExchange(CurrencySendingAmount.ToString());
         }
 
         private void CalculateCurrencyExchange(string amount)
@@ -71,7 +85,25 @@ namespace FeroTransferApp.ViewModels
                 CurrencyReceivingAmount = Convert.ToDouble(amount) * ExchangeRate;
         }
 
-        public double ExchangeRate;
+        public double ExchangeRate
+        {
+            get => _exchangeRate;
+            set
+            {
+                SetProperty(ref _exchangeRate, value);
+                IsVisibleExchangeRate = true;
+            }
+        }
+
+        private bool IsVisibleExchangeRate
+        {
+            get => false;
+            set => SetProperty(ref _isVisibleExchangeRate, value);
+        }
+        public double CurrencySendingAmount
+        {
+            get => _currencySendingAmount; set => SetProperty(ref _currencySendingAmount, value);
+        }
         public double CurrencyReceivingAmount
         {
             get => _currencyReceivingAmount; set => SetProperty(ref _currencyReceivingAmount, value);

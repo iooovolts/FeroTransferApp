@@ -15,11 +15,17 @@
                        Placeholder="Search recipients"/>
     </Shell.SearchHandler>
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="add.png" Command="{Binding AddRecipientCommand}"/>
+        <ToolbarItem IconImageSource="plus.png" Command="{Binding AddRecipientCommand}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Recipients"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="{StaticResource FeroTransferTheme}"
+                   Margin="10,5,0,0" 
+                   IsVisible="{Binding RecipientsVisible}"/>
             <ListView x:Name="listView" ItemsSource="{Binding Recipients}" SelectedItem="{Binding Recipient, Mode=TwoWay}" IsVisible="{Binding RecipientsVisible}" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -14,9 +14,6 @@
                        SearchBoxVisibility="Collapsible"
                        Placeholder="Search transfers"/>
     </Shell.SearchHandler>
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Transfer" Command="{Binding NavigateToTransferViewCommand}"/>
-    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
                 <ListView ItemsSource="{Binding Transfers}" SelectionMode="None">

@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using FeroTransferApp.Models;
 using FeroTransferApp.ViewModels.Base;
+using Prism.AppModel;
 using Prism.Navigation;
 
 namespace FeroTransferApp.ViewModels
 {
-    public class CurrencyViewModel : BaseViewModel, INavigatingAware
+    public class CurrencyViewModel : BaseViewModel
     {
         private Currency _currency;
         private bool _isCurrencyReceiving;
@@ -36,7 +37,7 @@ namespace FeroTransferApp.ViewModels
             await _navigationService.GoBackAsync(navigationParams, false);
         }
 
-        public void OnNavigatingTo(INavigationParameters parameters)
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
             if (parameters.Count > 0)
             {
@@ -189,7 +190,6 @@ namespace FeroTransferApp.ViewModels
                 new Currency{Id="BGN", CurrencyName="Bulgarian Lev", CurrencySymbol="лв"},
                 new Currency{Id="CAD", CurrencyName="Canadian Dollar", CurrencySymbol="$"},
                 new Currency{Id="CLP", CurrencyName="Chilean Peso", CurrencySymbol="$"},
-                new Currency{Id="Dominican Peso", CurrencyName="Congolese Franc", CurrencySymbol="CDF"},
                 new Currency{Id="FJD", CurrencyName="Fijian Dollar", CurrencySymbol="$"},
                 new Currency{Id="GMD", CurrencyName="Gambian Dalasi"},
                 new Currency{Id="GYD", CurrencyName="Guyanese Dollar", CurrencySymbol="$"},
@@ -254,8 +254,6 @@ namespace FeroTransferApp.ViewModels
                 new Currency{Id="BYN", CurrencyName="New Belarusian Ruble", CurrencySymbol="p."},
                 new Currency{Id="BMD", CurrencyName="Bermudan Dollar"},
                 new Currency{Id="GGP", CurrencyName="Guernsey Pound"},
-                new Currency{Id="Cuban Convertible Peso", CurrencyName="Chilean Unit Of Account", CurrencySymbol="CLF"},
-                new Currency{Id="Jersey Pound", CurrencyName="Manx pound", CurrencySymbol="IMP"},
                 new Currency{Id="SVC", CurrencyName="Salvadoran Colón"},
                 new Currency{Id="ZMK", CurrencyName="Old Zambian Kwacha"},
                 new Currency{Id="XAG", CurrencyName="Silver (troy ounce)"},

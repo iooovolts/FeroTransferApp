@@ -7,7 +7,7 @@
              prism:ViewModelLocator.AutowireViewModel="True" 
              mc:Ignorable="d"
              Title="{Binding Title}"
-             x:Class="FeroTransferApp.Views.ProfileView">
+             x:Class="FeroTransferApp.Views.AccountView">
     <ContentPage.Content>
         <StackLayout>
             <Button Text="My account"/>

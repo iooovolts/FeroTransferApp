@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace FeroTransferApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginView : ContentPage
+    public partial class TabbedView : TabbedPage
     {
-        public LoginView()
+        public TabbedView()
         {
             InitializeComponent();
         }

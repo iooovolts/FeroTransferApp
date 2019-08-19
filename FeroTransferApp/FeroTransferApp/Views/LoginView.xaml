@@ -9,15 +9,6 @@
              x:Class="FeroTransferApp.Views.LoginView">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Entry Placeholder="Email"/>
-        <Entry Placeholder="Password"
-               IsPassword="true"/>
-        <Button Text="Login"
-                Clicked="Button_Clicked"/>
-        <ImageButton/>
-        <ImageButton/>
-        <ImageButton/>
     </StackLayout>
 
 </ContentPage>

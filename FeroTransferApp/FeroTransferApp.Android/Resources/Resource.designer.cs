@@ -5776,10 +5776,10 @@ namespace FeroTransferApp.Droid
 			public const int abc_vector_test = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int activity = 2130837588;
+			public const int account = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int add = 2130837589;
+			public const int activity = 2130837589;
 			
 			// aapt resource value: 0x7f020056
 			public const int avd_hide_password = 2130837590;
@@ -6475,7 +6475,7 @@ namespace FeroTransferApp.Droid
 			public const int notify_panel_notification_icon_bg = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int profile = 2130837813;
+			public const int plus = 2130837813;
 			
 			// aapt resource value: 0x7f020136
 			public const int recipients = 2130837814;
@@ -8514,6 +8514,9 @@ namespace FeroTransferApp.Droid
 			
 			// aapt resource value: 0x7f0d000e
 			public const int CardView_Light = 2131558414;
+			
+			// aapt resource value: 0x7f0d0202
+			public const int DrawerArrowStyle = 2131558914;
 			
 			// aapt resource value: 0x7f0d01ff
 			public const int MainTheme = 2131558911;

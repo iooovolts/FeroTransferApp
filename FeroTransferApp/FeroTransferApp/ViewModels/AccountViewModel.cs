@@ -7,11 +7,11 @@ using FeroTransferApp.ViewModels.Base;
 
 namespace FeroTransferApp.ViewModels
 {
-    public class ProfileViewModel : BaseViewModel
+    public class AccountViewModel : BaseViewModel
     {
         private INavigationService _navigationService;
         public DelegateCommand NavigateCommand { get; set; }
-        public ProfileViewModel(INavigationService navigationService)
+        public AccountViewModel(INavigationService navigationService)
         {
             Title = "Profile";
             _navigationService = navigationService;

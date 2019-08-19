@@ -5,20 +5,20 @@ using Prism.Navigation;
 
 namespace FeroTransferApp.ViewModels
 {
-    public class TransferTypeViewModel : BaseViewModel, INavigatingAware
+    public class TransferTypeViewModel : BaseViewModel
     {
         private INavigationService _navigationService;
         public DelegateCommand MobileMoneyCommand { get; set; }
         public TransferTypeViewModel(INavigationService navigationService)
         {
+            Title = "Choose a transfer method";
             _navigationService = navigationService;
-            MobileMoneyCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("TransferView", useModalNavigation: false));
+            MobileMoneyCommand = new DelegateCommand(NavigateToTransferView);
         }
 
-        public void OnNavigatingTo(INavigationParameters parameters)
+        private async void NavigateToTransferView()
         {
-            if (parameters.Count > 0)
-                Title = $"Transfer to {parameters.GetValue<string>("country")}";
+            await _navigationService.NavigateAsync("TransferView", useModalNavigation: false);
         }
     }
 }

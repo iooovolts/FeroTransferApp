@@ -8,7 +8,7 @@ using FeroTransferApp.ViewModels.Base;
 
 namespace FeroTransferApp.ViewModels
 {
-    public class RecipientDetailViewModel : BaseViewModel, INavigatedAware
+    public class RecipientDetailViewModel : BaseViewModel
     {
         private IEventAggregator EventAggregator { get; set; }
         private INavigationService NavigationService { get; set; }
@@ -23,17 +23,16 @@ namespace FeroTransferApp.ViewModels
 
         private void SaveRecipient()
         {
-            Recipient.IsSaved = true;
             EventAggregator.GetEvent<RecipientAddedEvent>().Publish(Recipient);
             NavigationService.GoBackToRootAsync();
         }
 
-        public void OnNavigatedFrom(INavigationParameters parameters)
+        public override void OnNavigatedFrom(INavigationParameters parameters)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
-        public void OnNavigatedTo(INavigationParameters parameters)
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
             if(parameters.Count > 0 )
                 Recipient = parameters.GetValue<Recipient>("recipient");

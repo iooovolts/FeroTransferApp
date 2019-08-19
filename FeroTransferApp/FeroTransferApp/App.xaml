@@ -9,6 +9,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="FeroTransferTheme">#FFB84E</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarTextColor" Value="#FFB84E"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BarBackgroundColor" Value="White"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

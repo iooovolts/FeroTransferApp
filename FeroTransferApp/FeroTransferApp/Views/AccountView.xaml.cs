@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace FeroTransferApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfileView : ContentPage
+    public partial class AccountView : ContentPage
     {
-        public ProfileView()
+        public AccountView()
         {
             InitializeComponent();
         }

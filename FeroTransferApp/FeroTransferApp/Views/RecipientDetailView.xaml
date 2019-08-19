@@ -34,9 +34,6 @@
                     </TableRoot>
                 </TableView>
             </StackLayout>
-            <Button Text="Transfer to this recipient" 
-                    Command="{Binding TransferCommand}"
-                    IsVisible="{Binding Recipient.IsSaved}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

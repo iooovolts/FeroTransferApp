@@ -11,6 +11,5 @@ namespace FeroTransferApp.Models
         public virtual string FullName { get => $"{FirstName} {LastName}"; }
         public string AccountNumber { get; set; }
         public string SortCode { get; set; }
-        public bool IsSaved { get; set; }
     }
 }
