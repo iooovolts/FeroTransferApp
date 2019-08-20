@@ -1,29 +1,34 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using FeroTransferApp.Models;
+using FeroTransferApp.Services;
 using FeroTransferApp.ViewModels.Base;
+using Prism.Events;
 
 namespace FeroTransferApp.ViewModels
 {
     public class ActivityViewModel : BaseViewModel
     {
         private INavigationService NavigationService { get; set; }
-        public ActivityViewModel(INavigationService navigationService)
+        private ObservableCollection<TransferModel> _transferModels = new ObservableCollection<TransferModel>();
+
+        public ActivityViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
         {
             Title = "Activity";
             NavigationService = navigationService;
+            eventAggregator.GetEvent<TransferCompletedEvent>().Subscribe(AddTransferModel);
         }
 
-        private ObservableCollection<TransferModel> _transfers;
-
-        public ObservableCollection<TransferModel> Transfers
+        private void AddTransferModel(TransferModel transferModel)
         {
-            get => _transfers;
-            set => SetProperty(ref _transfers, value);
+            TransferModels.Add(transferModel);
+        }
+
+        public ObservableCollection<TransferModel> TransferModels
+        {
+            get => _transferModels;
+            set => SetProperty(ref _transferModels, value);
         }
     }
 }

@@ -27,11 +27,6 @@ namespace FeroTransferApp.ViewModels
             NavigationService.GoBackToRootAsync();
         }
 
-        public override void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            //throw new NotImplementedException();
-        }
-
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             if(parameters.Count > 0 )

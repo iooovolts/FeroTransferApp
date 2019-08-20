@@ -12,10 +12,5 @@ namespace FeroTransferApp.Views
         {
             InitializeComponent();
         }
-
-        private async void Button_OnClicked(object sender, EventArgs e)
-        {
-            await PopupNavigation.Instance.PushAsync(new TransferConfirmationView());
-        }
     }
 }

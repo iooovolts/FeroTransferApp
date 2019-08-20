@@ -16,33 +16,26 @@
     </Shell.SearchHandler>
 
     <ContentPage.Content>
-                <ListView ItemsSource="{Binding Transfers}" SelectionMode="None">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <Label Grid.Column="0"
-                                       Grid.Row="0"
-                                       Text="{Binding RecipientName}"/>
-                                <Label Grid.Column="0"
-                                       Grid.Row="1"
-                                       Text="{Binding SentDate}"/>
-                                <Label Grid.Column="1"
-                                       Grid.Row="0"
-                                       Text="{Binding SenderAmount}"/>
-                                <Label Grid.Column="1"
-                                       Grid.Row="1"
-                                       Text="{Binding RecipientAmount}"/>
-                        </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+        <StackLayout>
+            <Label Text="Activity history"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="{StaticResource FeroTransferTheme}"
+                   Margin="10,5,0,0"/>
+            <ListView ItemsSource="{Binding TransferModels}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Recipient.PhoneNumber}"/>
+                                <Label Text="{Binding CreatedDate}"/>
+                                <Label Text="{Binding AmountSending}"/>
+                                <Label Text="{Binding AmountReceiving}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -24,7 +24,7 @@ namespace FeroTransferApp.ViewModels
 
         private async void NavigateToTabbedView()
         {
-            await _navigationService.NavigateAsync("/TabbedView", useModalNavigation: false);
+            await _navigationService.NavigateAsync("TabbedView", useModalNavigation: false);
         }
     }
 }

@@ -14,7 +14,7 @@
         <StackLayout>
             <templates:TransferConfirmationTemplate/>
             <Button Text="Confirm"
-                    Command="{prismNavigation:NavigateTo TransferConfirmationView}"/>
+                    Command="{Binding NavigateToConfirmationViewCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

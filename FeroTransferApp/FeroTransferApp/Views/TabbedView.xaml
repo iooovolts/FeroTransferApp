@@ -14,7 +14,8 @@
              BarTextColor="White"
              UnselectedTabColor="WhiteSmoke"
              SelectedTabColor="White"
-             x:Class="FeroTransferApp.Views.TabbedView">
+             x:Class="FeroTransferApp.Views.TabbedView"
+             >
     <TabbedPage.Effects>
         <effects:NoShiftEffect />
     </TabbedPage.Effects>
