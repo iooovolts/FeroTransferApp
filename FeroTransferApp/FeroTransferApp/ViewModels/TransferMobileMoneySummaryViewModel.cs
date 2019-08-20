@@ -27,7 +27,7 @@ namespace FeroTransferApp.ViewModels
         private async void NavigateToConfirmationView()
         {
             SaveTransferModel();
-            await _navigationService.NavigateAsync("TransferConfirmationView");
+            await _navigationService.NavigateAsync("TransferConfirmationPopupView");
         }
 
         private void SaveTransferModel()

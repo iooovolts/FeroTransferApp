@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             mc:Ignorable="d"
+             x:Class="FeroTransferApp.Views.ActivityPopupView">
+    <ScrollView
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+        <Frame
+            x:Name="FrameContainer"
+            Margin="15"
+            HorizontalOptions="Center"
+            BackgroundColor="White">
+            <StackLayout 
+                IsClippedToBounds="True"
+                Padding="10, 5"
+                Spacing="3">
+                <Label Text="{Binding TransferModel.CreatedDate, StringFormat='Created on {0}'}" 
+                       FontSize="Medium"/>
+                <Label Text="{Binding TransferModel.TransferType}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding TransferModel.AmountSending, StringFormat='Amount sent : {0}'}"/>
+                    <Label Text="{Binding TransferModel.CurrencySending.CurrencySymbol}"/>
+                </StackLayout>
+                <Label Text="{Binding TransferModel.ExchangeRate, StringFormat='Rate : {0}'}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding TransferModel.AmountReceiving, StringFormat='Amount received : {0}'}"/>
+                    <Label Text="{Binding TransferModel.CurrencyReceiving.CurrencySymbol}"/>
+                </StackLayout>
+
+                <Label Text="{Binding TransferModel.SentDate}"/>
+                <Label Text="{Binding TransferModel.Recipient.PhoneNumber, StringFormat='Sent to : {0}'}"/>
+            </StackLayout>
+        </Frame>
+    </ScrollView>
+</popup:PopupPage>

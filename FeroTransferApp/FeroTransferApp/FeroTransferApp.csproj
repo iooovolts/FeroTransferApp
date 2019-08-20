@@ -29,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\Popups\ActivityPopupView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Templates\TransferTemplate.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -56,7 +59,7 @@
     <EmbeddedResource Update="Views\Templates\TransferConfirmationTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TransferConfirmationView.xaml">
+    <EmbeddedResource Update="Views\Popups\TransferConfirmationPopupView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TransferMobileMoneyView.xaml">
@@ -78,6 +81,12 @@
   <ItemGroup>
     <Compile Update="Views\AccountView.xaml.cs">
       <DependentUpon>AccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\ActivityPopupView.xaml.cs">
+      <DependentUpon>ActivityPopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\TransferConfirmationPopupView.xaml.cs">
+      <DependentUpon>TransferConfirmationPopupView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Templates\TransferTemplate.xaml.cs">
       <DependentUpon>TransferTemplate.xaml</DependentUpon>

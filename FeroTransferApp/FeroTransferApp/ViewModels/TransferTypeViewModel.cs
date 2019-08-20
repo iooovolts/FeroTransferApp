@@ -18,7 +18,7 @@ namespace FeroTransferApp.ViewModels
 
         private async void NavigateToTransferView()
         {
-            await _navigationService.NavigateAsync("NavigationPage/TransferMobileMoneyView", useModalNavigation: false);
+            await _navigationService.NavigateAsync("NavigationPage/TransferMobileMoneyView", useModalNavigation: true);
         }
     }
 }

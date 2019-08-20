@@ -5,12 +5,12 @@ using Prism.Navigation;
 
 namespace FeroTransferApp.ViewModels
 {
-    public class TransferConfirmationViewModel : BaseViewModel
+    public class TransferConfirmationPopupViewModel : BaseViewModel
     {
         private INavigationService _navigationService;
         public DelegateCommand NavigateToTransferViewCommand { get; set; }
         public DelegateCommand NavigateToTabbedViewCommand { get; set; }
-        public TransferConfirmationViewModel(INavigationService navigationService)
+        public TransferConfirmationPopupViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             NavigateToTransferViewCommand = new DelegateCommand(NavigateToTransferView);

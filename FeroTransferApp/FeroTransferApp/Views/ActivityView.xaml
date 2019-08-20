@@ -17,12 +17,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Activity history"
-                   FontAttributes="Bold"
-                   FontSize="Large"
-                   TextColor="{StaticResource FeroTransferTheme}"
-                   Margin="10,5,0,0"/>
-            <ListView ItemsSource="{Binding TransferModels}">
+            <ListView x:Name="listView" ItemsSource="{Binding TransferModels}" SelectedItem="{Binding TransferModel, Mode=TwoWay}" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

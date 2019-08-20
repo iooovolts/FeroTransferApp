@@ -15,16 +15,40 @@
              UnselectedTabColor="WhiteSmoke"
              SelectedTabColor="White"
              x:Class="FeroTransferApp.Views.TabbedView"
-             >
+             d:NavigationPage.HasNavigationBar="False">
     <TabbedPage.Effects>
         <effects:NoShiftEffect />
     </TabbedPage.Effects>
 
     <TabbedPage.Children>
-        <local:ActivityView Title="Activity" IconImageSource="activity.png"/>
-        <local:RecipientsView Title="Recipients" IconImageSource="recipients.png"/>
-        <local:TransferTypeView Title="Transfer" IconImageSource="fero.png"/>
-        <local:InviteView Title="Invite" IconImageSource="invite.png"/>
-        <local:AccountView Title="Account" IconImageSource="account.png"/>
+        <NavigationPage Title="Activity" IconImageSource="activity.png">
+            <x:Arguments>
+                <local:ActivityView/>
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="Recipients" IconImageSource="recipients.png">
+            <x:Arguments>
+                <local:RecipientsView/>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Transfer" IconImageSource="fero.png">
+            <x:Arguments>
+                <local:TransferTypeView />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Invite" IconImageSource="invite.png">
+            <x:Arguments>
+                <local:InviteView />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Account" IconImageSource="account.png">
+            <x:Arguments>
+                <local:AccountView/>
+            </x:Arguments>
+        </NavigationPage>
     </TabbedPage.Children>
 </TabbedPage>
