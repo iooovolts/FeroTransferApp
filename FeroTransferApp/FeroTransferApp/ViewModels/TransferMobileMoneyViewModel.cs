@@ -10,10 +10,11 @@ namespace FeroTransferApp.ViewModels
     public class TransferMobileMoneyViewModel : BaseViewModel
     {
         private double _exchangeRate;
+        private string _phoneNumber;
         private Currency _currencySending;
         private Currency _currencyReceiving;
         private bool _isVisibleExchangeRate;
-        private double _currencySendingAmount;
+        private double _currencySendingAmount = 1000;
         private double _currencyReceivingAmount;
         private readonly ICurrencyService _currencyService;
         private readonly INavigationService _navigationService;
@@ -26,6 +27,7 @@ namespace FeroTransferApp.ViewModels
         public TransferMobileMoneyViewModel(INavigationService navigationService, ICurrencyService currencyService)
         {
             Title = "Mobile money transfer";
+            TransferModel = new TransferModel();
             IsVisibleExchangeRate = false;
             _currencyService = currencyService;
             _navigationService = navigationService;
@@ -52,19 +54,18 @@ namespace FeroTransferApp.ViewModels
         {
             var navigationParams = new NavigationParameters();
             navigationParams.Add("transferModel", TransferModel);
-            await _navigationService.NavigateAsync("TransferMobileMoneyConfirmationView", navigationParams, false);
+            await _navigationService.NavigateAsync("TransferMobileMoneySummaryView", navigationParams, false);
         }
 
         public override void OnNavigatedFrom(INavigationParameters parameters)
         {
-            TransferModel = new TransferModel
-            {
-                CurrencySending = CurrencySending,
-                CurrencyReceiving = CurrencyReceiving,
-                ExchangeRate = ExchangeRate,
-                AmountSending = _currencySendingAmount,
-                AmountReceiving = _currencyReceivingAmount
-            };
+            TransferModel.ExchangeRate = ExchangeRate;
+            TransferModel.TransferType = "Mobile money";
+            TransferModel.CurrencySending = CurrencySending;
+            TransferModel.CurrencyReceiving = CurrencyReceiving;
+            TransferModel.AmountSending = _currencySendingAmount;
+            TransferModel.AmountReceiving = _currencyReceivingAmount;
+            TransferModel.Recipient = new Recipient{PhoneNumber = PhoneNumber};
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
@@ -100,6 +101,12 @@ namespace FeroTransferApp.ViewModels
                 SetProperty(ref _exchangeRate, value);
                 IsVisibleExchangeRate = true;
             }
+        }
+
+        public string PhoneNumber
+        {
+            get => _phoneNumber;
+            set => SetProperty(ref _phoneNumber, value);
         }
 
         private bool IsVisibleExchangeRate

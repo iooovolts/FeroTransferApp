@@ -5,6 +5,7 @@ using Prism;
 using FeroTransferApp.Services;
 using FeroTransferApp.Views.Templates;
 using Prism.Navigation;
+using Prism.Plugin.Popups;
 using Xamarin.Forms;
 
 namespace FeroTransferApp
@@ -22,16 +23,20 @@ namespace FeroTransferApp
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterSingleton<HttpClient>();
             containerRegistry.RegisterSingleton<ICurrencyService, CurrencyService>();
+
+            containerRegistry.RegisterSingleton<HttpClient>();
+            containerRegistry.RegisterPopupNavigationService();
+            
             containerRegistry.RegisterForNavigation<TabbedView>();
+            containerRegistry.RegisterForNavigation<CurrencyView>();
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<RecipientsView>();
             containerRegistry.RegisterForNavigation<TransferTypeView>();
             containerRegistry.RegisterForNavigation<RecipientDetailView>();
             containerRegistry.RegisterForNavigation<TransferMobileMoneyView>();
-            containerRegistry.RegisterForNavigation<TransferMobileMoneyConfirmationView>();
-            containerRegistry.RegisterForNavigation<CurrencyView>();
+            containerRegistry.RegisterForNavigation<TransferConfirmationView>();
+            containerRegistry.RegisterForNavigation<TransferMobileMoneySummaryView>();
         }
 
         protected override void OnStart()

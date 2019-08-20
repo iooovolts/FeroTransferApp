@@ -17,6 +17,7 @@
     <PackageReference Include="Prism.Core" Version="7.2.0.1367" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1367" />
     <PackageReference Include="Prism.Forms" Version="7.2.0.1367" />
+    <PackageReference Include="Prism.Plugin.Popups" Version="7.2.0.573" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
@@ -55,6 +56,9 @@
     <EmbeddedResource Update="Views\Templates\TransferConfirmationTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\TransferConfirmationView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\TransferMobileMoneyView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -87,8 +91,8 @@
     <Compile Update="Views\Templates\TransferConfirmationTemplate.xaml.cs">
       <DependentUpon>TransferConfirmationTemplate.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\TransferMobileMoneyConfirmationView.xaml.cs">
-      <DependentUpon>TransferMobileMoneyConfirmationView.xaml</DependentUpon>
+    <Compile Update="Views\TransferMobileMoneySummaryView.xaml.cs">
+      <DependentUpon>TransferMobileMoneySummaryView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\TransferMobileMoneyView.xaml.cs">
       <DependentUpon>TransferMobileMoneyView.xaml</DependentUpon>

@@ -8,16 +8,21 @@ using FeroTransferApp.ViewModels.Base;
 
 namespace FeroTransferApp.ViewModels
 {
-    public class TransferMobileMoneyConfirmationViewModel : BaseViewModel
+    public class TransferMobileMoneySummaryViewModel : BaseViewModel
     {
         private INavigationService _navigationService;
         private TransferModel _transferModel;
-        public DelegateCommand NavigateCommand { get; set; }
-        public TransferMobileMoneyConfirmationViewModel(INavigationService navigationService)
+        //public DelegateCommand NavigateToConfirmationViewCommand { get; set; }
+        public TransferMobileMoneySummaryViewModel(INavigationService navigationService)
         {
             Title = "Transfer confirmation";
             _navigationService = navigationService;
-            NavigateCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("TransferConfirmationView", useModalNavigation: false));
+            //NavigateToConfirmationViewCommand = new DelegateCommand(NavigateToConfirmationView);
+        }
+
+        private async void NavigateToConfirmationView()
+        {
+            await _navigationService.NavigateAsync("TransferConfirmationView");
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)

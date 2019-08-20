@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             mc:Ignorable="d"
+             x:Class="FeroTransferApp.Views.TransferConfirmationView"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+        <Frame
+        x:Name="FrameContainer"
+        Margin="15"
+        HorizontalOptions="Center"
+        BackgroundColor="White">
+            <StackLayout 
+        IsClippedToBounds="True"
+        Padding="10, 5"
+        Spacing="3">
+                <Label
+            FontSize="Large"
+            TextColor="Black"
+                Text="Transfer successful"/>
+                <Button Text="OK" Command="{Binding NavigateToTabbedViewCommand}"/>
+            </StackLayout>
+        </Frame>
+    </ScrollView>
+</popup:PopupPage>

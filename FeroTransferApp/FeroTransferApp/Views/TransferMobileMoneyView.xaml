@@ -13,7 +13,8 @@
         <StackLayout>
             <templates:TransferTemplate/>
             <Entry Placeholder="Recipient's mobile number"
-                   Keyboard="Telephone"/>
+                   Keyboard="Telephone"
+                   Text="{Binding PhoneNumber}"/>
             <Button Text="Continue"
                     Command="{Binding NavigateToConfirmationViewCommand}"/>
         </StackLayout>
