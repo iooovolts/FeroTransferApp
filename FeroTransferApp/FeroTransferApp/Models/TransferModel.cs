@@ -8,6 +8,7 @@ namespace FeroTransferApp.Models
     {
         public string SenderId { get; set; }
         public Recipient Recipient { get; set; }
+        public string TransferType { get; set; }
         public double ExchangeRate { get; set; }
         public double AmountSending { get; set; }
         public DateTime CreatedDate { get; set; }

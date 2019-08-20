@@ -22,7 +22,7 @@
                     Style="{StaticResource Button}"/>
             <Button Text="Mobile money" 
                     Style="{StaticResource Button}"
-                    Command="{Binding MobileMoneyCommand}"/>
+                    Command="{Binding NavigateToTransferViewCommand}"/>
             <Button Text="Bank transfer"
                     Style="{StaticResource Button}"/>
             <Button Text="Fero transfer wallet"

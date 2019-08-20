@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Navigation;
 using FeroTransferApp.Models;
 using FeroTransferApp.Services;
 using FeroTransferApp.ViewModels.Base;
-using Xamarin.Forms;
 
 namespace FeroTransferApp.ViewModels
 {
-    public class TransferViewModel : BaseViewModel
+    public class TransferMobileMoneyViewModel : BaseViewModel
     {
         private double _exchangeRate;
         private Currency _currencySending;
@@ -23,16 +21,18 @@ namespace FeroTransferApp.ViewModels
         public TransferModel TransferModel;
         public DelegateCommand NavigateCommand { get; set; }
         public DelegateCommand<string> NavigateToCurrencyViewCommand { get; set; }
+        public DelegateCommand NavigateToConfirmationViewCommand { get; set; }
         public DelegateCommand<string> CalculateCurrencyExchangeCommand { get; set; }
-        public TransferViewModel(INavigationService navigationService, ICurrencyService currencyService)
+        public TransferMobileMoneyViewModel(INavigationService navigationService, ICurrencyService currencyService)
         {
-            Title = "Send money";
+            Title = "Mobile money transfer";
             IsVisibleExchangeRate = false;
             _currencyService = currencyService;
             _navigationService = navigationService;
             CalculateCurrencyExchangeCommand = new DelegateCommand<string>(CalculateCurrencyExchange);
             NavigateCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("TransferTypeView", useModalNavigation: false));
             NavigateToCurrencyViewCommand = new DelegateCommand<string>(NavigateToCurrencyView);
+            NavigateToConfirmationViewCommand = new DelegateCommand(NavigateToConfirmationView);
         }
 
         private async void NavigateToCurrencyView(string currencyType)
@@ -46,6 +46,13 @@ namespace FeroTransferApp.ViewModels
                     navigationParams.Add("isCurrencySending", false);
                 await _navigationService.NavigateAsync("CurrencyView", navigationParams, false);
             }
+        }
+
+        private async void NavigateToConfirmationView()
+        {
+            var navigationParams = new NavigationParameters();
+            navigationParams.Add("transferModel", TransferModel);
+            await _navigationService.NavigateAsync("TransferMobileMoneyConfirmationView", navigationParams, false);
         }
 
         public override void OnNavigatedFrom(INavigationParameters parameters)

@@ -1,16 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:prismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
-             xmlns:prismNavigation="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
-             prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
-             x:Class="FeroTransferApp.Views.TransferView">
-    <ContentPage.Content>
-        <StackLayout>
+             x:Class="FeroTransferApp.Views.Templates.TransferTemplate">
+    <ContentView.Content>
+    <StackLayout>
             <Label Text="Amount to send"
                    FontAttributes="Bold"
                    TextColor="{StaticResource FeroTransferTheme}"
@@ -75,9 +72,6 @@
                             BackgroundColor="{StaticResource FeroTransferTheme}"/>
                 </Grid>
             </StackLayout>
-
-            <Button Text="Continue"
-                    Command="{Binding NavigateCommand}"/>
         </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    </ContentView.Content>
+</ContentView>

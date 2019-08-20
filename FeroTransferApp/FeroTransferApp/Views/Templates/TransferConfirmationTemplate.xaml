@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"            
+             mc:Ignorable="d"
+             x:Class="FeroTransferApp.Views.Templates.TransferConfirmationTemplate">
+    <ContentView.Content>
+        <StackLayout>
+            <Label Margin="10"
+                   Text="Summary"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource FeroTransferTheme}"/>
+            <Label Text="{Binding TransferModel.Recipient.FullName, StringFormat=Recipient: {0}}"/>
+            <Label Text="{Binding TransferModel.TransferType, StringFormat=Transfer type: {0}}"/>
+
+            <StackLayout Margin="10">
+                <Label Text="You send"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"
+                           Text="{Binding TransferModel.CurrencySending.CurrencySymbol}"/>
+                    <Label Grid.Column="1"
+                           Text="{Binding TransferModel.AmountSending}">
+                    </Label>
+                    <Label Grid.Column="2"
+                            Text="{Binding TransferModel.CurrencySending.Id}"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource FeroTransferTheme}"/>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" IsVisible="{Binding IsVisibleExchangeRate}">
+                <Label Text="Rate: " 
+                       HorizontalOptions="Center"/>
+                <Label Text="{Binding TransferModel.ExchangeRate}" 
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource FeroTransferTheme}"/>
+            </StackLayout>
+
+            <StackLayout Margin="10">
+                <Label Text="They receive"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"
+                           Text="{Binding TransferModel.CurrencyReceiving.CurrencySymbol}"/>
+                    <Label Grid.Column="1"
+                           Text="{Binding TransferModel.AmountReceiving}"/>
+                    <Label Grid.Column="2" 
+                            Text="{Binding TransferModel.CurrencyReceiving.Id}"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource FeroTransferTheme}"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

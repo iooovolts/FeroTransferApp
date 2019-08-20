@@ -7,7 +7,8 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
              Title="{Binding Title}"
-             x:Class="FeroTransferApp.Views.CurrencyView">
+             x:Class="FeroTransferApp.Views.CurrencyView"
+             NavigationPage.HasNavigationBar="False">
 
     <Shell.SearchHandler>
         <SearchHandler Query="{Binding Query}"

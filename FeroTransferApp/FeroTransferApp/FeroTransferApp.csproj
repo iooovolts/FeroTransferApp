@@ -28,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\Templates\TransferTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\CurrencyView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -49,10 +52,10 @@
     <EmbeddedResource Update="Views\TabbedView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TransferConfirmationView.xaml">
+    <EmbeddedResource Update="Views\Templates\TransferConfirmationTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TransferView.xaml">
+    <EmbeddedResource Update="Views\TransferMobileMoneyView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TransferTypeView.xaml">
@@ -72,17 +75,23 @@
     <Compile Update="Views\AccountView.xaml.cs">
       <DependentUpon>AccountView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Templates\TransferTemplate.xaml.cs">
+      <DependentUpon>TransferTemplate.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\RecipientsView.xaml.cs">
       <DependentUpon>RecipientsView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\InviteView.xaml.cs">
       <DependentUpon>InviteView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\TransferConfirmationView.xaml.cs">
-      <DependentUpon>TransferConfirmationView.xaml</DependentUpon>
+    <Compile Update="Views\Templates\TransferConfirmationTemplate.xaml.cs">
+      <DependentUpon>TransferConfirmationTemplate.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\TransferView.xaml.cs">
-      <DependentUpon>TransferView.xaml</DependentUpon>
+    <Compile Update="Views\TransferMobileMoneyConfirmationView.xaml.cs">
+      <DependentUpon>TransferMobileMoneyConfirmationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TransferMobileMoneyView.xaml.cs">
+      <DependentUpon>TransferMobileMoneyView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ActivityView.xaml.cs">
       <DependentUpon>ActivityView.xaml</DependentUpon>

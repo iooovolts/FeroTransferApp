@@ -22,7 +22,7 @@
     <TabbedPage.Children>
         <local:ActivityView Title="Activity" IconImageSource="activity.png"/>
         <local:RecipientsView Title="Recipients" IconImageSource="recipients.png"/>
-        <local:TransferView Title="Transfer" IconImageSource="fero.png"/>
+        <local:TransferTypeView Title="Transfer" IconImageSource="fero.png"/>
         <local:InviteView Title="Invite" IconImageSource="invite.png"/>
         <local:AccountView Title="Account" IconImageSource="account.png"/>
     </TabbedPage.Children>
