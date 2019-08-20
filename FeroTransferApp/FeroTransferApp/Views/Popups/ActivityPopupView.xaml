@@ -25,12 +25,12 @@
                 <Label Text="{Binding TransferModel.TransferType}"/>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="{Binding TransferModel.AmountSending, StringFormat='Amount sent : {0}'}"/>
-                    <Label Text="{Binding TransferModel.CurrencySending.CurrencySymbol}"/>
+                    <Label Text="{Binding TransferModel.CurrencySending.Id}"/>
                 </StackLayout>
                 <Label Text="{Binding TransferModel.ExchangeRate, StringFormat='Rate : {0}'}"/>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="{Binding TransferModel.AmountReceiving, StringFormat='Amount received : {0}'}"/>
-                    <Label Text="{Binding TransferModel.CurrencyReceiving.CurrencySymbol}"/>
+                    <Label Text="{Binding TransferModel.CurrencyReceiving.Id}"/>
                 </StackLayout>
 
                 <Label Text="{Binding TransferModel.SentDate}"/>

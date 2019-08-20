@@ -1,10 +1,6 @@
-﻿using FeroTransferApp.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using FeroTransferApp.ViewModels.Base;
+﻿using FeroTransferApp.ViewModels.Base;
 
-namespace FeroTransferApp.ViewModel
+namespace FeroTransferApp.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {

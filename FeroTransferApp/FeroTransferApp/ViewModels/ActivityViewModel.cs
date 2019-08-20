@@ -46,7 +46,7 @@ namespace FeroTransferApp.ViewModels
 
         private ObservableCollection<TransferModel> _transferModels = new ObservableCollection<TransferModel>
         {
-            new TransferModel{AmountReceiving = 1500, AmountSending = 1000, CurrencySending = new Currency{CurrencySymbol = "USD"}, CurrencyReceiving = new Currency{CurrencySymbol = "GBP"}, CreatedDate = DateTime.Now, ExchangeRate = 1.01123, Recipient = new Recipient{PhoneNumber = "07367503487"}, TransferType = "Mobile money"}
+            new TransferModel{AmountReceiving = 1500, AmountSending = 1000, CurrencySending = new Currency{Id = "USD"}, CurrencyReceiving = new Currency{Id = "GBP"}, CreatedDate = DateTime.Now, ExchangeRate = 1.01123, Recipient = new Recipient{PhoneNumber = "07367503487"}, TransferType = "Mobile money"}
         };
         public ObservableCollection<TransferModel> TransferModels
         {
