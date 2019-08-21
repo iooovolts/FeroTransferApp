@@ -13,7 +13,7 @@
             <Style x:Key="Button" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="VerticalOptions" Value="FillAndExpand"/>
-                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="CornerRadius" Value="40"/>
                 <Setter Property="Margin" Value="10"/>
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource FeroTransferTheme}"/>
@@ -31,17 +31,21 @@
                 </Grid.RowDefinitions>
             
             <Button Grid.Row="0"
-                    Text="Cash pickup" 
+                    Text="Cash pickup"
+                    ImageSource="cashpickup.png"
                     Style="{StaticResource Button}"/>
             <Button Grid.Row="1"
-                    Text="Mobile money"
+                    Text="Mobile money" 
+                    ImageSource="mobilemoney.png"
                     Style="{StaticResource Button}"
                     Command="{Binding NavigateToTransferViewCommand}"/>
             <Button Grid.Row="2"
                     Text="Bank transfer"
+                    ImageSource="banktransfer.png"
                     Style="{StaticResource Button}"/>
             <Button Grid.Row="3"
-                    Text="Fero transfer wallet"
+                    Text="Ferotransfer wallet"
+                    ImageSource="fero.png"
                     Style="{StaticResource Button}"/>
             </Grid>
         </StackLayout>

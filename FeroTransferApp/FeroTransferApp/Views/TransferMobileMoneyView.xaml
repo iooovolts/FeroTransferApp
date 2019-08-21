@@ -7,8 +7,15 @@
              xmlns:templates="clr-namespace:FeroTransferApp.Views.Templates;assembly=FeroTransferApp"
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
-             x:Class="FeroTransferApp.Views.TransferMobileMoneyView"
-             Title="{Binding Title}">
+             x:Class="FeroTransferApp.Views.TransferMobileMoneyView">
+    <NavigationPage.TitleView>
+        <StackLayout >
+            <ImageButton Source="back.png"
+                         HorizontalOptions="Start"
+                         BackgroundColor="Transparent"
+                         Command="{Binding NavigateBackCommand}"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
             <templates:TransferTemplate/>

@@ -10,7 +10,7 @@ namespace FeroTransferApp.ViewModels
         private INavigationService _navigationService;
         public DelegateCommand NavigateToTransferViewCommand { get; set; }
         public DelegateCommand NavigateToTabbedViewCommand { get; set; }
-        public TransferConfirmationPopupViewModel(INavigationService navigationService)
+        public TransferConfirmationPopupViewModel(INavigationService navigationService) 
         {
             _navigationService = navigationService;
             NavigateToTransferViewCommand = new DelegateCommand(NavigateToTransferView);
@@ -24,7 +24,8 @@ namespace FeroTransferApp.ViewModels
 
         private async void NavigateToTabbedView()
         {
-            await _navigationService.NavigateAsync("TabbedView", useModalNavigation: false);
+            await _navigationService.GoBackAsync();
+            //await _navigationService.NavigateAsync("/TabbedView", useModalNavigation: false);
         }
     }
 }

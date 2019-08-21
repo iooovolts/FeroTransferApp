@@ -15,13 +15,15 @@ namespace FeroTransferApp.ViewModels
         private IEventAggregator EventAggregator { get; set; }
         private readonly INavigationService _navigationService;
         private TransferModel _transferModel;
+
+        public DelegateCommand NavigateBackCommand { get; set; }
         public DelegateCommand NavigateToConfirmationViewCommand { get; set; }
-        public TransferMobileMoneySummaryViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
+        public TransferMobileMoneySummaryViewModel(INavigationService navigationService, IEventAggregator eventAggregator) 
         {
-            Title = "Transfer confirmation";
             EventAggregator = eventAggregator;
             _navigationService = navigationService;
             NavigateToConfirmationViewCommand = new DelegateCommand(NavigateToConfirmationView);
+            NavigateBackCommand = new DelegateCommand(async () => await _navigationService.GoBackAsync());
         }
 
         private async void NavigateToConfirmationView()

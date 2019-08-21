@@ -23,9 +23,10 @@
     <TabbedPage.Children>
         <NavigationPage Title="Activity" IconImageSource="activity.png">
             <x:Arguments>
-                <local:ActivityView/>
+                <local:ActivityView Title="Activity" IconImageSource="activity.png"/>
             </x:Arguments>
         </NavigationPage>
+
         
         <NavigationPage Title="Recipients" IconImageSource="recipients.png">
             <x:Arguments>

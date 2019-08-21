@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:prismNavigation="clr-namespace:Prism.Navigation.Xaml;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
              x:Class="FeroTransferApp.Views.TransferConfirmationPopupView"

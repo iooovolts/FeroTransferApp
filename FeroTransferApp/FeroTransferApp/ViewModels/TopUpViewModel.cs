@@ -11,7 +11,7 @@ namespace FeroTransferApp.ViewModels
     {
         private INavigationService _navigationService;
         public DelegateCommand NavigateCommand { get; set; }
-        public TopUpViewModel(INavigationService navigationService)
+        public TopUpViewModel(INavigationService navigationService) 
         {
             Title = "Top Up";
             _navigationService = navigationService;

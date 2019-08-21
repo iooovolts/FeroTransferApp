@@ -8,11 +8,10 @@
              xmlns:templates="clr-namespace:FeroTransferApp.Views.Templates;assembly=FeroTransferApp"
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
-             x:Class="FeroTransferApp.Views.TransferMobileMoneySummaryView"
-             NavigationPage.HasNavigationBar="False">
+             x:Class="FeroTransferApp.Views.TransferMobileMoneySummaryView">
     <ContentPage.Content>
         <StackLayout>
-            <templates:TransferConfirmationTemplate/>
+            <templates:TransferSummaryTemplate/>
             <Button Text="Confirm"
                     Command="{Binding NavigateToConfirmationViewCommand}"/>
         </StackLayout>

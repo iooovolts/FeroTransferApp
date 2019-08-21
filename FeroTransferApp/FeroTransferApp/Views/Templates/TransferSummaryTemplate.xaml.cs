@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace FeroTransferApp.Views.Templates
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TransferConfirmationTemplate : ContentView
+    public partial class TransferSummaryTemplate : ContentView
     {
-        public TransferConfirmationTemplate()
+        public TransferSummaryTemplate()
         {
             InitializeComponent();
         }

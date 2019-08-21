@@ -23,6 +23,7 @@ namespace FeroTransferApp.ViewModels
         public DelegateCommand NavigateCommand { get; set; }
         public DelegateCommand<string> NavigateToCurrencyViewCommand { get; set; }
         public DelegateCommand NavigateToConfirmationViewCommand { get; set; }
+        public DelegateCommand NavigateBackCommand { get; set; }
         public DelegateCommand<string> CalculateCurrencyExchangeCommand { get; set; }
         public TransferMobileMoneyViewModel(INavigationService navigationService, ICurrencyService currencyService)
         {
@@ -35,6 +36,7 @@ namespace FeroTransferApp.ViewModels
             NavigateCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("TransferTypeView", useModalNavigation: false));
             NavigateToCurrencyViewCommand = new DelegateCommand<string>(NavigateToCurrencyView);
             NavigateToConfirmationViewCommand = new DelegateCommand(NavigateToConfirmationView);
+            NavigateBackCommand = new DelegateCommand(async () => await _navigationService.GoBackAsync());
         }
 
         private async void NavigateToCurrencyView(string currencyType)

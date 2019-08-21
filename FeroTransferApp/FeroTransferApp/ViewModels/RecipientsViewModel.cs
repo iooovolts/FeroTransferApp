@@ -15,7 +15,7 @@ namespace FeroTransferApp.ViewModels
         public DelegateCommand AddRecipientCommand { get; set; }
         public DelegateCommand<Recipient> DeleteRecipientCommand { get; set; }
 
-        public RecipientsViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
+        public RecipientsViewModel(INavigationService navigationService, IEventAggregator eventAggregator) 
         {
             Title = ""; 
             RecipientsVisible = true;

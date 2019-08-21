@@ -14,7 +14,7 @@ namespace FeroTransferApp.ViewModels
         private INavigationService NavigationService { get; set; }
         public DelegateCommand SaveCommand { get; set; }
         public DelegateCommand TransferCommand { get; set; }
-        public RecipientDetailViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
+        public RecipientDetailViewModel(INavigationService navigationService, IEventAggregator eventAggregator) 
         {
             EventAggregator = eventAggregator;
             NavigationService = navigationService;

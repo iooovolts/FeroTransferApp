@@ -14,6 +14,13 @@
                        SearchBoxVisibility="Collapsible"
                        Placeholder="Search transfers"/>
     </Shell.SearchHandler>
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <SearchBar HorizontalOptions="Start"
+                       Placeholder="Type a recipient or number"
+                       />
+        </StackLayout>
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <StackLayout>
