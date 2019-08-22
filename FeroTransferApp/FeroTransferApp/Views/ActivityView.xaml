@@ -6,33 +6,28 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
-             Title="{Binding Title}"
              x:Class="FeroTransferApp.Views.ActivityView">
-
     <Shell.SearchHandler>
         <SearchHandler Query="{Binding Query}"
                        SearchBoxVisibility="Collapsible"
                        Placeholder="Search transfers"/>
     </Shell.SearchHandler>
-    <NavigationPage.TitleView>
-        <StackLayout>
-            <SearchBar HorizontalOptions="Start"
-                       Placeholder="Type a recipient or number"
-                       />
-        </StackLayout>
-    </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Activity history"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="{StaticResource FeroTransferTheme}"
+                   Margin="10,5,0,0" 
+                   IsVisible="{Binding RecipientsVisible}"/>
             <ListView x:Name="listView" ItemsSource="{Binding TransferModels}" SelectedItem="{Binding TransferModel, Mode=TwoWay}" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
+                            <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding Recipient.PhoneNumber}"/>
                                 <Label Text="{Binding CreatedDate}"/>
-                                <Label Text="{Binding AmountSending}"/>
-                                <Label Text="{Binding AmountReceiving}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

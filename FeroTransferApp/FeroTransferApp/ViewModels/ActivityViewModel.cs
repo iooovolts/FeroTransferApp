@@ -17,7 +17,6 @@ namespace FeroTransferApp.ViewModels
 
         public ActivityViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
         {
-            Title = "Activity history";
             _navigationService = navigationService;
             eventAggregator.GetEvent<TransferCompletedEvent>().Subscribe(AddTransferModel);
         }

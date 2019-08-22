@@ -16,7 +16,8 @@ namespace FeroTransferApp
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("TabbedView?selectedTab=TransferTypeView");
+            //await NavigationService.NavigateAsync("TabbedView?selectedTab=TransferTypeView");
+            MainPage = new AppShell();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

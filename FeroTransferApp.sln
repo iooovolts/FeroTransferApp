@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeroTransferApp.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeroTransferApp.iOS", "FeroTransferApp\FeroTransferApp.iOS\FeroTransferApp.iOS.csproj", "{7F905E5F-C941-434D-BE6B-2253930B5872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeroTransferApp", "FeroTransferApp\FeroTransferApp\FeroTransferApp.csproj", "{0B2DD79A-2FF1-40E5-A114-42146C485D0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeroTransferApp", "FeroTransferApp\FeroTransferApp\FeroTransferApp.csproj", "{0B2DD79A-2FF1-40E5-A114-42146C485D0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeroTransferApp.Core", "FeroTransferApp.Core\FeroTransferApp.Core.csproj", "{FB65CD39-1FD0-4D61-A086-0304C030A97C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,18 @@ Global
 		{0B2DD79A-2FF1-40E5-A114-42146C485D0F}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{0B2DD79A-2FF1-40E5-A114-42146C485D0F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{0B2DD79A-2FF1-40E5-A114-42146C485D0F}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Release|iPhone.Build.0 = Release|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FB65CD39-1FD0-4D61-A086-0304C030A97C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
